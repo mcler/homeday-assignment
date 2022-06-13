@@ -4,7 +4,12 @@
 
 This is a test assignment for @homeday-de
 
-Project uses:
+### Features:
+* Workflow can be browsed using the native browser back / next button
+* Infinite load of GitHub repositories
+* Adaptive layout
+
+### Project uses:
 * [Vue 2](https://v2.vuejs.org/) with Vue Router and Vuex
 * [Homeday Blocks](https://blocks.homeday.dev/) as UI library
 * [Vite](https://vitejs.dev/) as dev server and bundler
