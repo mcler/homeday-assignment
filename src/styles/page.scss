@@ -1,0 +1,127 @@
+@import '@/styles/_mixins.scss';
+
+body {
+    background-color: $secondary-bg;
+
+
+    @media (min-width: $break-tablet) {
+        background-color: $secondary-color;
+        padding: $sp-l $sp-xl;
+    }
+}
+
+@import '@/styles/_mixins.scss';
+
+.page {
+    flex: 0 1 100%;
+    min-height: 100vh;
+
+    @media (max-width: $break-tablet) {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+    }
+
+    @media (min-width: $break-tablet) {
+        @include elevation(4);
+        border-radius: $card-border-radius;
+        flex: 0 1 auto;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: auto;
+    }
+
+    @media (min-width: $break-desktop) {
+        background-color: $primary-bg;
+        border-radius: $card-border-radius;
+        max-width: 1152px;
+    }
+}
+
+.page-header,
+.page-navigation,
+.page-content {
+    padding: $sp-m;
+}
+
+.page-header,
+.page-navigation {
+    background-color: $secondary-bg;
+
+    @media (min-width: $break-tablet) {
+        background-color: $primary-bg;
+    }
+}
+
+.page-header {
+    align-items: center;
+    border-radius: $card-border-radius $card-border-radius 0 0;
+    display: flex;
+    gap: $sp-xs;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    @media (min-width: $break-tablet) {
+        padding: $sp-l $sp-l 0 $sp-l;
+        position: static;
+    }
+
+    &__logo,
+    &__title {
+        @include font('DS-200');
+    }
+
+    &__logo {
+        margin-top: -0.15em;
+        height: 1em;
+        width: 1em;
+    }
+
+    &__title {
+        font-weight: bold;
+        margin: 0;
+    }
+}
+
+.page-content {
+    background-color: $primary-bg;
+    flex: 0 1 auto;
+    padding: $sp-m;
+
+    @media (min-width: $break-tablet) {
+        min-height: 450px;
+        padding: $sp-l;
+
+        &--animating {
+            overflow: hidden;
+        }
+    }
+}
+
+.page-navigation {
+    border-radius: 0 0 $card-border-radius $card-border-radius;
+    display: flex;
+    justify-content: center;
+    gap: $sp-m;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+
+    @media (min-width: $break-tablet) {
+        padding: 0 $sp-l $sp-l $sp-l;
+        position: static;
+    }
+
+    &__button--hidden {
+        visibility: hidden;
+    }
+
+    &__arrow {
+        height: 0.9em;
+        vertical-align: middle;
+
+        path {
+            fill: currentColor;
+        }
+    }
+}

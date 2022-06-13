@@ -1,0 +1,12 @@
+$animation-curve: ease;
+$base-font-size: 16;
+
+$default-border-color: getShade($quaternary-color, 50);
+$default-border: 1px solid $default-border-color;
+
+$card-border-radius: 8px;
+
+$field-border-radius: 4px;
+$field-border-color: getShade($quaternary-color, 60);
+$field-border: 2px solid $field-border-color;
+$field-border-color-hover: getShade($quaternary-color, 80);

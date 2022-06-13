@@ -1,0 +1,11 @@
+{
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "vue": ["vue/dist/vue.common.js"],
+    }
+  }
+}

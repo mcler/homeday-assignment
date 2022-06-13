@@ -1,0 +1,13 @@
+// CSS reset
+@import '../../node_modules/normalize.css/normalize.css';
+
+// Homeday core styles
+@import 'homeday-blocks/src/styles/main.scss';
+
+// Core layout
+@import "@/styles/page.scss";
+// @import "@/styles/content.scss";
+
+// Vue transitions
+@import "@/styles/fade.scss";
+@import "@/styles/slide.scss";
