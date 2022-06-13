@@ -24,7 +24,7 @@ export default {
 .app-step {
     display: flex;
     align-items: center;
-    margin-bottom: $sp-l;
+    margin: 0 0 $sp-l 0;
 
     &__num {
         background-color: $primary-color;

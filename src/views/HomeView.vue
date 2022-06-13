@@ -21,7 +21,7 @@ export default {
         <p class="app-home__text">Welcome!</p>
 
         <p class="app-home__text">This is a&nbsp;test assignment for&nbsp;<HdLink href="https://github.com/homeday-de/" target="_blank">Homeday</HdLink> that utilizes some fantasy process, collects data and&nbsp;displays any&nbsp;GitHub profile of&nbsp;your choice.</p>
-        <p class="app-home__text">Feel free to&nbsp;play with different data inputs and screen sizes.</p>
+        <p class="app-home__text">Feel free to&nbsp;play with different data inputs &amp;&nbsp;screen sizes and use browser back/next buttons to navigate.</p>
 
         <p class="app-home__note">Made with love by&nbsp;<HdLink href="https://github.com/mcler" target="_blank">@mcler</HdLink> &middot; <HdLink href="https://github.com/mcler/homeday-assignment" target="_blank">Project repository</HdLink></p>
     </div>
@@ -36,10 +36,10 @@ export default {
 
     &__logo {
         @include elevation(8);
-        $size: 120px;
+        $size: $sp-l * 3;
         display: block;
         border-radius: 11%;
-        margin: $sp-xl auto;
+        margin: $sp-l auto;
         height: $size;
         width: $size;
     }
@@ -49,7 +49,11 @@ export default {
     }
 
     &__note {
-        @include font('DS-80')
+        @include font('DS-80');
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 </style>
