@@ -29,7 +29,7 @@ export default {
         <HdLink class="gh-repo__title" :href="repo.html_url" target="_blank">{{ repo.name }}</HdLink>
         <p v-if="repo.description" class="gh-repo__description">{{ repo.description }}</p>
         <ul class="gh-repo__facts">
-            <li class="gh-repo__fact">
+            <li v-if="repo.language" class="gh-repo__fact">
                 {{ repo.language }}
             </li>
             <li class="gh-repo__fact" :title="`${repo.stargazers_count} starred`">
