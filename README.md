@@ -13,16 +13,16 @@ Project uses:
 ## Setup
 |NPM|Yarn|
 |--|--|
-|<code>bash npm install</code>|<code>yarn</code>|
+|<code>npm install</code>|<code>yarn</code>|
 
 ## Commands
 |Command|Meaning|
 |--|--|
+|`npm run build`|Build production version and output bundle stats to stats.html|
+|`npm run coverage`|Run tests coverage|
 |`npm run dev`|Run local dev server|
 |`npm run lint`|Run ESLint|
 |`npm run test`|Run tests|
-|`npm run coverage`|Run tests|
-|`npm run build`|Build production version and output bundle stats|
 
 ## Code structure
 |Folder|Description|
