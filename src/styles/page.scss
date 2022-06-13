@@ -89,7 +89,7 @@ body {
     padding: $sp-m;
 
     @media (min-width: $break-tablet) {
-        min-height: 450px;
+        min-height: 480px;
         padding: $sp-l;
 
         &--animating {
