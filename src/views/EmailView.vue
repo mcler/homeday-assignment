@@ -13,6 +13,7 @@ export default {
         AppDescription, AppForm, AppEula, AppStep,
     },
     computed: {
+        // automatic get/set for v-model
         ...mapFields('credentials', ['email', 'agree']),
     },
 }

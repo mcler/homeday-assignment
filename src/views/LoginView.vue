@@ -19,7 +19,7 @@ export default {
         icons: { check, error },
     }),
     computed: {
-        // get/set for v-model
+        // automatic get/set for v-model
         ...mapFields('credentials', ['firstname', 'lastname', 'username']),
 
         ...mapState('credentials', ['usernameChecking', 'usernameValid']),

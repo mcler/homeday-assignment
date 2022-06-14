@@ -1,7 +1,3 @@
-<script>
-// import magnifyingGlassHouse from 'homeday-assets/M'
-</script>
-
 <template>
     <div class="app-empty">
         <div class="app-empty__title">

@@ -1,4 +1,3 @@
-// less code for getters/setters and v-model
 import { getField, updateField } from 'vuex-map-fields'
 import { FormValidationService } from 'homeday-blocks'
 import debounce from 'lodash/debounce'
@@ -26,7 +25,7 @@ export const credentials = {
     mutations: {
         updateField, // for v-model support
 
-        ...createSetters(['firstname', 'lastname',  'username', 'usernameChecking', 'usernameValid', 'email', 'agree']),
+        ...createSetters(['firstname', 'lastname',  'username', 'usernameChecking', 'usernameValid', 'email', 'agree']), // automatic creation of setters
     },
     actions: {
         /**

@@ -12,7 +12,7 @@ export const githubUser = {
         username: (_, __, rootState) => rootState.credentials?.username,
     },
     mutations: {
-        ...createSetters(['loading', 'error', 'data']),
+        ...createSetters(['loading', 'error', 'data']), // automatic creation of setters
     },
     actions: {
         loadUser({ getters, commit, dispatch }) {

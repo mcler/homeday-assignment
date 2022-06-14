@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import HomeView from '@/views/HomeView.vue'
 import { store } from '@/store'
 
 Vue.use(VueRouter)
@@ -13,7 +12,7 @@ export const router = new VueRouter({
         {
             path: '/',
             name: 'home',
-            component: HomeView, // () => import('@/views/HomeView.vue'),
+            component: () => import('@/views/HomeView.vue'),
         },
         {
             path: '/login',

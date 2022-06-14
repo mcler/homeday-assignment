@@ -15,12 +15,13 @@ export const githubRepos = {
         canLoadMore: (state, __, rootState) => state.data && (state.page * REPOS_PER_PAGE < rootState.githubUser.data?.public_repos),
     },
     mutations: {
-        ...createSetters(['loading', 'error', 'page', 'data']),
+        ...createSetters(['loading', 'error', 'page', 'data']), // automatic creation of setters
     },
     actions: {
         loadRepos({ getters: { user }, commit }) {
             if (!user?.login) return Promise.reject('No user provided')
 
+            // resetting state
             commit('SET_LOADING', true)
             commit('SET_ERROR', false)
             commit('SET_PAGE', 1)

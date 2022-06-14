@@ -1,13 +1,13 @@
 <script>
 import { HdIcon, HdLink } from 'homeday-blocks'
 
-import logoSrc from '@/assets/logo.svg'
+import logo from '@/assets/logo.svg'
 import AppStep from '@/components/AppStep.vue'
 
 export default {
     components: { AppStep, HdIcon, HdLink },
     data: () => ({
-        logo: logoSrc,
+        logo,
     }),
 }
 </script>

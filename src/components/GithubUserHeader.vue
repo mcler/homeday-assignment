@@ -51,7 +51,6 @@ export default {
         border: $default-border;
         border-radius: $avatar-size * 0.5;
         display: block;
-        // grid-area: gh-avatar;
         height: $avatar-size;
         overflow: hidden;
         width: $avatar-size;

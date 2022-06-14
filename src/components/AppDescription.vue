@@ -1,14 +1,3 @@
-<script>
-export default {
-    props: {
-        num: {
-            type: Number,
-            required: true,
-        },
-    },
-}
-</script>
-
 <template>
     <p class="app-description">
         <slot />
