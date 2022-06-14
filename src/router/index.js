@@ -44,5 +44,12 @@ export const router = new VueRouter({
                 next()
             },
         },
+        // Lazy 404 redirect
+        {
+            path: '/*',
+            beforeEnter: (_, __, next) => {
+                next({ name: 'home' })
+            },
+        },
     ],
 })
