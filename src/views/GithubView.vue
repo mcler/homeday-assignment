@@ -1,4 +1,5 @@
 <script>
+import debounce from 'lodash/debounce'
 import { mapState, mapActions, mapGetters } from 'vuex'
 
 import { HdLoadingSpinner } from 'homeday-blocks'
@@ -30,13 +31,13 @@ export default {
         ...mapActions('githubUser', ['loadUser']),
         ...mapActions('githubRepos', ['loadMoreRepos']),
 
-        onPageEndReach() {
+        onPageEndReach: debounce(function() {
             if (!this.canLoadMoreRepos || this.reposLoading) return
 
             if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
                 this.loadMoreRepos()
             }
-        },
+        }, 666),
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.onPageEndReach, { passive: true })
