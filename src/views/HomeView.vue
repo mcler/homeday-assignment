@@ -23,7 +23,7 @@ export default {
         <p class="app-home__text">This is a&nbsp;test assignment for&nbsp;<HdLink href="https://github.com/homeday-de/" target="_blank">Homeday</HdLink> that utilizes some fantasy process, collects data and&nbsp;displays any&nbsp;GitHub profile of&nbsp;your choice.</p>
         <p class="app-home__text">Feel free to&nbsp;play with different data inputs &amp;&nbsp;screen sizes and use browser back/next buttons to navigate.</p>
 
-        <p class="app-home__note">Made with love by&nbsp;<HdLink href="https://github.com/mcler" target="_blank">@mcler</HdLink> &middot; <HdLink href="https://github.com/mcler/homeday-assignment" target="_blank">Project repository</HdLink></p>
+        <p class="app-home__note">Made with love by&nbsp;<HdLink href="https://github.com/mcler" target="_blank">@mcler</HdLink> &middot; <HdLink href="https://github.com/mcler/homeday-assignment" target="_blank">Project repository</HdLink> &middot; <HdLink href="https://mcler.notion.site/Homeday-assignment-afc04818a6a8461482af758d8774d850" target="_blank">Task</HdLink></p>
     </div>
 </template>
 

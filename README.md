@@ -1,6 +1,6 @@
 # Homeday Assignment
 
-[Live](https://homeday-assignment.vercel.app/)
+[Live demo](https://homeday-assignment.vercel.app/) &middot; [Task](https://mcler.notion.site/Homeday-assignment-afc04818a6a8461482af758d8774d850)
 
 This is a test assignment for @homeday-de
 
@@ -9,11 +9,13 @@ This is a test assignment for @homeday-de
 * Infinite load of GitHub repositories
 * Adaptive layout
 
-### Project uses:
+### Notable dependencies:
 * [Vue 2](https://v2.vuejs.org/) with Vue Router and Vuex
-* [Homeday Blocks](https://blocks.homeday.dev/) as UI library
-* [Vite](https://vitejs.dev/) as dev server and bundler
-* [Vitest](https://vitest.dev/) as tests runner
+* [Homeday Blocks](https://blocks.homeday.dev/), UI library
+* [`vuex-map-fields`](https://www.npmjs.com/package/vuex-map-fields), two-way data binding via `v-model` with Vuex state
+* [`vuex-router-sync`](https://www.npmjs.com/package/vuex-router-sync), current state of router in `route` Vuex module
+* [Vite](https://vitejs.dev/), dev server and bundler
+* [Vitest](https://vitest.dev/), testing library
 
 ## Setup
 |NPM|Yarn|
