@@ -12,7 +12,7 @@ export default {
     computed: {
         isOrganization() {
             const { user } = this
-            return user?.type == 'Organization'
+            return user?.type === 'Organization'
         },
     },
 }
@@ -21,8 +21,15 @@ export default {
 <template>
     <div class="gh-header">
         <transition name="fade" appear>
-            <picture v-show="isAvatarReady" class="gh-header__avatar" :class="{'gh-header__avatar--org': isOrganization }">
-                <img class="gh-header__image" :src="user.avatar_url" :alt="user.name" @load="isAvatarReady = true">
+            <picture
+                v-show="isAvatarReady"
+                class="gh-header__avatar"
+                :class="{'gh-header__avatar--org': isOrganization }">
+                <img
+                    class="gh-header__image"
+                    :src="user.avatar_url"
+                    :alt="user.name"
+                    @load="isAvatarReady = true">
             </picture>
         </transition>
 

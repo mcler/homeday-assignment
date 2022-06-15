@@ -1,5 +1,5 @@
 <template>
-    <section class="app-eula" v-once>
+    <section v-once class="app-eula">
         <h1>Fake Terms and services</h1>
         <p>Are there Out-of-Stock photos? Gafuffle. I&rsquo;m the only person in&nbsp;the world with my&nbsp;name. A&nbsp;tagline for a&nbsp;car company that prides itself on&nbsp;its morals and ethics: Take the High Road. Curling is&nbsp;the best sport named after something you do&nbsp;to&nbsp;your hair. Curling is&nbsp;the best sport named after something you do&nbsp;to&nbsp;your hair.</p>
 

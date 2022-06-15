@@ -46,31 +46,37 @@ export default {
         <AppDescription>All fields are required to fill</AppDescription>
 
         <HdInput
+            v-model="firstname"
             label="Firstname"
             lang="en"
             name="firstname"
-            required
-            v-model="firstname" />
+            required />
 
         <HdInput
+            v-model="lastname"
             label="lastname"
             lang="en"
             name="lastname"
-            required
-            v-model="lastname" />
+            required />
 
         <HdInput
             ref="username"
+            v-model="username"
             label="Github account"
             lang="en"
             name="gh-username"
             required
-            v-model="username"
             @input="checkUsername">
             <template #input-right>
                 <HdLoadingSpinner v-show="usernameChecking" class="login-spinner" />
-                <HdIcon v-show="!usernameChecking && usernameValid === false" class="login-icon login-icon--error" :src="icons.error" />
-                <HdIcon v-show="!usernameChecking && usernameValid === true" class="login-icon login-icon--success" :src="icons.check" />
+                <HdIcon
+                    v-show="!usernameChecking && usernameValid === false"
+                    class="login-icon login-icon--error"
+                    :src="icons.error" />
+                <HdIcon
+                    v-show="!usernameChecking && usernameValid === true"
+                    class="login-icon login-icon--success"
+                    :src="icons.check" />
             </template>
         </HdInput>
     </AppForm>

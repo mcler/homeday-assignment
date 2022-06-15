@@ -4,42 +4,32 @@ import { mapState, mapActions, mapGetters } from 'vuex'
 
 import { HdLoadingSpinner } from 'homeday-blocks'
 
-import AppLoading from '@/components/AppLoading.vue'
-import AppError from '@/components/AppError.vue'
 import AppEmpty from '@/components/AppEmpty.vue'
+import AppError from '@/components/AppError.vue'
+import AppLoading from '@/components/AppLoading.vue'
 
 import GithubRepo from '@/components/GithubRepo.vue'
-import GithubUserHeader from '@/components/GithubUserHeader.vue'
 import GithubUserContacts from '@/components/GithubUserContacts.vue'
+import GithubUserHeader from '@/components/GithubUserHeader.vue'
 import GithubUserStats from '@/components/GithubUserStats.vue'
 
 export default {
     components: {
         HdLoadingSpinner,
 
-        AppLoading,
-        AppError,
         AppEmpty,
+        AppError,
+        AppLoading,
 
         GithubRepo,
-        GithubUserHeader, GithubUserContacts, GithubUserStats,
+        GithubUserContacts,
+        GithubUserHeader,
+        GithubUserStats,
     },
     computed: {
         ...mapState('githubUser', { userLoading: 'loading', userError: 'error', user: 'data' }),
         ...mapState('githubRepos', { reposLoading: 'loading', reposError: 'error', repos: 'data' }),
         ...mapGetters('githubRepos', { canLoadMoreRepos: 'canLoadMore' }),
-    },
-    methods: {
-        ...mapActions('githubUser', ['loadUser']),
-        ...mapActions('githubRepos', ['loadMoreRepos']),
-
-        onPageEndReach: debounce(function() {
-            if (!this.canLoadMoreRepos || this.reposLoading) return
-
-            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-                this.loadMoreRepos()
-            }
-        }, 666),
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.onPageEndReach, { passive: true })
@@ -48,13 +38,25 @@ export default {
         window.addEventListener('scroll', this.onPageEndReach, { passive: true })
         this.loadUser()
     },
+    methods: {
+        ...mapActions('githubUser', ['loadUser']),
+        ...mapActions('githubRepos', ['loadMoreRepos']),
+
+        onPageEndReach: debounce(function () {
+            if (!this.canLoadMoreRepos || this.reposLoading) return
+
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+                this.loadMoreRepos()
+            }
+        }, 666),
+    },
 }
 </script>
 
 <template>
     <AppLoading v-if="userLoading" />
     <AppError v-else-if="userError" />
-    <div class="gh-layout" v-else>
+    <div v-else class="gh-layout">
         <section>
             <div class="gh-user">
                 <GithubUserHeader :user="user" />

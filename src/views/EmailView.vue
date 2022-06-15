@@ -26,20 +26,20 @@ export default {
         <AppDescription>All fields are required to fill</AppDescription>
 
         <HdInput
+            v-model="email"
             label="E-mail"
             lang="en"
             name="email"
             required
-            type="email"
-            v-model="email" />
+            type="email" />
 
         <AppEula />
 
         <HdCheckbox
-            innerLabel="Agree with terms and services"
+            v-model="agree"
+            inner-label="Agree with terms and services"
             lang="en"
             name="agree"
-            required
-            v-model="agree" />
+            required />
     </AppForm>
 </template>

@@ -26,17 +26,26 @@ export default {
 
 <template>
     <nav v-show="show" class="page-navigation">
-        <RouterLink v-show="buttons?.start" custom :to="{ name: 'login' }" v-slot="{ navigate }">
+        <RouterLink
+            v-show="buttons?.start"
+            v-slot="{ navigate }"
+            custom :to="{ name: 'login' }">
             <HdButton @click="navigate">Start</HdButton>
         </RouterLink>
 
-        <RouterLink v-show="buttons?.prev" custom :to="{ name: buttons?.prev?.to }" v-slot="{ navigate }">
+        <RouterLink
+            v-show="buttons?.prev"
+            v-slot="{ navigate }"
+            custom :to="{ name: buttons?.prev?.to }">
             <HdButton modifier="tertiary" @click="navigate">
                 <HdIcon class="page-navigation__arrow" :src="icons.arrowPrev"/> Previous
             </HdButton>
         </RouterLink>
 
-        <RouterLink v-show="buttons?.next" custom :to="{ name: buttons?.next?.to }" v-slot="{ navigate }">
+        <RouterLink
+            v-show="buttons?.next"
+            v-slot="{ navigate }"
+            custom :to="{ name: buttons?.next?.to }">
             <HdButton
                 :class="{'page-navigation__button--hidden': buttons?.next?.hidden }"
                 :disabled="buttons?.next?.disabled"
