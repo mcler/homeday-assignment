@@ -17,7 +17,7 @@ export function callApi(url, params = {}, init) {
         }
     }
 
-    return fetch(url, init)
+    return fetch(fetchUrl, init)
         .then(res => res.json())
         .then(json => json.message ? Promise.reject(json.message) : json)
 }
