@@ -4,7 +4,7 @@ import debounce from 'lodash/debounce'
 
 import AppHeader from '@/components/AppHeader.vue'
 import AppNavigation from '@/components/AppNavigation.vue'
-import { APP_TRANSITIONS, APP_PAGES_ORDER } from '@/utils/consts'
+import { APP_TRANSITIONS } from '@/utils/consts'
 
 export default {
     components: {
@@ -20,14 +20,14 @@ export default {
     watch: {
         // Handling transition name on route change
         $route(to, from) {
-            if (!from.name || to.name === from.name) {
+            if (!from?.name || to.name === from.name) {
                 this.transitionName = APP_TRANSITIONS.default
                 return
             }
-            const toWeight = APP_PAGES_ORDER.indexOf(to.name)
-            const fromWeight = APP_PAGES_ORDER.indexOf(from.name)
+            const toOrder = to?.meta?.order
+            const fromOrder = from?.meta?.order
 
-            this.transitionName = fromWeight < toWeight ? APP_TRANSITIONS.routerLeft : APP_TRANSITIONS.routerRight
+            this.transitionName = fromOrder < toOrder ? APP_TRANSITIONS.routerLeft : APP_TRANSITIONS.routerRight
         },
     },
     methods: {

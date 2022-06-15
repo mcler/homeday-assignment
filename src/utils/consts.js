@@ -8,11 +8,6 @@ export const APP_TRANSITIONS = {
 }
 
 /**
- * App pages order
- */
-export const APP_PAGES_ORDER = ['home', 'login', 'email', 'github']
-
-/**
  * GitHub API Repos per page
  */
 export const REPOS_PER_PAGE = 20

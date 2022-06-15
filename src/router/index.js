@@ -13,11 +13,13 @@ export const router = new VueRouter({
             path: '/',
             name: 'home',
             component: () => import('@/views/HomeView.vue'),
+            meta: { order: 0 },
         },
         {
             path: '/login',
             name: 'login',
             component: () => import('@/views/LoginView.vue'),
+            meta: { order: 1 },
         },
         {
             path: '/email',
@@ -30,6 +32,7 @@ export const router = new VueRouter({
                 }
                 next()
             },
+            meta: { order: 2 },
         },
         {
             path: '/github',
@@ -42,6 +45,7 @@ export const router = new VueRouter({
                 }
                 next()
             },
+            meta: { order: 3 },
         },
         // Lazy 404 redirect
         {
