@@ -14,6 +14,10 @@ module.exports = {
     'rules': {
         'comma-dangle': ['error', 'always-multiline'],
         'consistent-return': 'error',
+        'eqeqeq': [
+            'warn',
+            'smart',
+        ],
         'indent': [
             'error',
             4,
@@ -26,6 +30,8 @@ module.exports = {
             'error',
             'single',
         ],
+        'vue/attribute-hyphenation': 'error',
+        'vue/attributes-order': ['error'],
         'vue/html-indent': [
             'error',
             4,
@@ -37,6 +43,14 @@ module.exports = {
                 'ignores': [],
             },
         ],
+        'vue/max-attributes-per-line': [
+            'error',
+            {
+                'singleline': 3,
+                'multiline': 2,
+            },
+        ],
         'vue/no-deprecated-destroyed-lifecycle': 0,
+        'vue/order-in-components': 'error',
     },
 }
