@@ -23,6 +23,13 @@ export default {
         ...mapFields('credentials', ['firstname', 'lastname', 'username']),
 
         ...mapState('credentials', ['usernameChecking', 'usernameValid']),
+
+        showUserCheckError() {
+            return !this.usernameChecking && this.usernameValid === false
+        },
+        showUserCheckSuccess() {
+            return !this.usernameChecking && this.usernameValid === true
+        },
     },
     watch: {
         usernameValid(newValue) {
@@ -70,11 +77,11 @@ export default {
             <template #input-right>
                 <HdLoadingSpinner v-show="usernameChecking" class="login-spinner" />
                 <HdIcon
-                    v-show="!usernameChecking && usernameValid === false"
+                    v-show="showUserCheckError"
                     class="login-icon login-icon--error"
                     :src="icons.error" />
                 <HdIcon
-                    v-show="!usernameChecking && usernameValid === true"
+                    v-show="showUserCheckSuccess"
                     class="login-icon login-icon--success"
                     :src="icons.check" />
             </template>

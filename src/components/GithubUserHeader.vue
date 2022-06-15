@@ -15,6 +15,11 @@ export default {
             return user?.type === 'Organization'
         },
     },
+    methods: {
+        onAvatarLoad() {
+            this.isAvatarReady = true
+        },
+    },
 }
 </script>
 
@@ -29,7 +34,7 @@ export default {
                     class="gh-header__image"
                     :src="user.avatar_url"
                     :alt="user.name"
-                    @load="isAvatarReady = true">
+                    @load="onAvatarLoad">
             </picture>
         </transition>
 
