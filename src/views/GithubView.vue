@@ -80,9 +80,7 @@ export default {
                     <GithubRepo v-for="repo of repos" :key="`repo-${repo.id}`" :repo="repo" />
                 </ul>
 
-                <transition name="fade">
-                    <HdLoadingSpinner v-show="canLoadMoreRepos" class="gh-load" />
-                </transition>
+                <HdLoadingSpinner v-show="canLoadMoreRepos" class="gh-load" />
             </div>
         </section>
     </div>
