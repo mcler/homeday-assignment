@@ -79,9 +79,10 @@ export default {
 <style lang="scss">
 @import '@/styles/_mixins.scss';
 
-.login-spinner,
+.loading-spinner.login-spinner,
 .login-icon {
     height: rem-calc(24);
+    width: rem-calc(24);
 }
 
 .login-icon {
