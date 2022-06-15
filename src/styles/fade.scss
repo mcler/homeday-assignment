@@ -3,7 +3,7 @@
 .fade {
     &-enter-active,
     &-leave-active {
-        transition: opacity $time-s $animation-curve;
+        transition: opacity $time-s * 1.5 $animation-curve;
     }
 
     &-enter,
