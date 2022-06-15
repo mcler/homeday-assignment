@@ -76,9 +76,13 @@ export default {
                     <h2 class="gh-repos__title">Repositories</h2>
                 </div>
 
-                <ul class="gh-repos__list">
+                <transition-group
+                    tag="ul"
+                    class="gh-repos__list"
+                    name="fade"
+                    appear>
                     <GithubRepo v-for="repo of repos" :key="`repo-${repo.id}`" :repo="repo" />
-                </ul>
+                </transition-group>
 
                 <HdLoadingSpinner v-show="canLoadMoreRepos" class="gh-load" />
             </div>
