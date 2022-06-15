@@ -6,6 +6,7 @@ import { HdLoadingSpinner } from 'homeday-blocks'
 
 import AppLoading from '@/components/AppLoading.vue'
 import AppError from '@/components/AppError.vue'
+import AppEmpty from '@/components/AppEmpty.vue'
 
 import GithubRepo from '@/components/GithubRepo.vue'
 import GithubUserHeader from '@/components/GithubUserHeader.vue'
@@ -18,6 +19,7 @@ export default {
 
         AppLoading,
         AppError,
+        AppEmpty,
 
         GithubRepo,
         GithubUserHeader, GithubUserContacts, GithubUserStats,
@@ -64,7 +66,10 @@ export default {
 
         <section>
             <AppLoading v-if="reposLoading && !repos" />
-            <div v-if="repos?.length" class="gh-repos">
+            <AppEmpty v-else-if="!repos?.length">
+                No repositories
+            </AppEmpty>
+            <div v-else class="gh-repos">
                 <div class="gh-repos__header">
                     <h2 class="gh-repos__title">Repositories</h2>
                 </div>
