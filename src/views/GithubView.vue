@@ -113,9 +113,11 @@ export default {
 }
 
 .gh-user {
+    padding: $sp-xs 0;
+
     @media (min-width: $break-tablet) {
         position: sticky;
-        top: $sp-s;
+        top: 0;
     }
 }
 
